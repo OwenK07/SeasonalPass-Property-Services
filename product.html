@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b4332">
+    <meta name="description" content="Choose a SeasonalPass property-care package and get a clear monthly estimate for your Halifax home.">
+    <title>Packages &amp; Pricing | SeasonalPass Property Services</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="product.js" defer></script>
+  </head>
+  <body>
+    <div class="scarcity-bar">
+      <strong>Limited annual subscriptions:</strong> spots are strictly capped for Halifax's West End &amp; Northwest Arm.
+    </div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="SeasonalPass Property Services home">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>SeasonalPass<small>Property Services</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="product.html" aria-current="page">Packages &amp; Pricing</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="button button-small" href="product.html">CHOOSE NOW BEFORE SUBSCRIPTIONS RUN OUT!</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="product-intro">
+        <div class="container">
+          <p class="eyebrow">Straightforward seasonal care</p>
+          <h1>Your home, cared for. <span>Your monthly cost, clear.</span></h1>
+          <p>Choose your package, enter the area that needs care, and see your monthly estimate update instantly.</p>
+        </div>
+      </section>
+
+      <section class="section product-section" aria-labelledby="estimate-heading">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Build your SeasonalPass</p>
+            <h2 id="estimate-heading">A plan that fits your property.</h2>
+            <p>Rates are the same in both service areas. Your estimate is based on the care area you enter.</p>
+          </div>
+
+          <div class="calculator-layout">
+            <div class="calculator-panel">
+              <fieldset class="package-options">
+                <legend>1. Choose your package</legend>
+                <label class="package-option">
+                  <input type="radio" name="package" value="spring-summer" data-name="Spring/SummerCare" data-rate="0.25">
+                  <span class="package-option-copy">
+                    <strong>Spring/SummerCare</strong>
+                    <small>Spring refresh and summer upkeep</small>
+                  </span>
+                  <span class="option-rate">$0.25 <small>/ sq ft / month</small></span>
+                </label>
+                <label class="package-option package-option-featured">
+                  <input type="radio" name="package" value="year-round" data-name="Year Round Love" data-rate="0.30" checked>
+                  <span class="package-option-copy">
+                    <strong>Year Round Love <span class="best-value">Best Value</span></strong>
+                    <small>Thoughtful care through every season</small>
+                  </span>
+                  <span class="option-rate">$0.30 <small>/ sq ft / month</small></span>
+                </label>
+                <label class="package-option">
+                  <input type="radio" name="package" value="fall-winter" data-name="Fall/WinterShield" data-rate="0.35">
+                  <span class="package-option-copy">
+                    <strong>Fall/WinterShield</strong>
+                    <small>Fall preparation and winter readiness</small>
+                  </span>
+                  <span class="option-rate">$0.35 <small>/ sq ft / month</small></span>
+                </label>
+              </fieldset>
+
+              <div class="form-group">
+                <label for="care-area">2. Set your required care area</label>
+                <div class="area-input-row">
+                  <input id="care-area" name="care-area" type="number" min="100" max="10000" step="1" value="1000" inputmode="numeric" aria-describedby="area-help area-error">
+                  <span>sq ft</span>
+                </div>
+                  <label class="visually-hidden" for="care-area-slider">Adjust required care area in square feet</label>
+                <input id="care-area-slider" class="area-slider" type="range" min="100" max="10000" step="1" value="1000" aria-label="Required care area in square feet" aria-describedby="area-help">
+                <div class="range-ends" aria-hidden="true"><span>100 sq ft</span><span>10,000 sq ft</span></div>
+                <p id="area-help" class="field-help">Only charged for required care area—not your house footprint or unused space.</p>
+                <p id="area-error" class="field-error" aria-live="polite"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="neighborhood">3. Choose your neighbourhood</label>
+                <select id="neighborhood" name="neighborhood">
+                  <option value="west-end">Halifax's West End</option>
+                  <option value="northwest-arm">Northwest Arm</option>
+                </select>
+                <p class="field-help">Both service areas have the same clear per-square-foot rate.</p>
+              </div>
+            </div>
+
+            <aside class="estimate-panel" aria-label="Live monthly estimate">
+              <span class="estimate-label">Your estimated monthly total</span>
+              <p id="monthly-total" class="monthly-total" aria-live="polite">$300.00</p>
+              <p class="estimate-period">per month <span>·</span> estimate</p>
+              <dl class="estimate-breakdown">
+                <div><dt>Package</dt><dd id="estimate-package">Year Round Love</dd></div>
+                <div><dt>Care area</dt><dd id="estimate-area">1,000 sq ft</dd></div>
+                <div><dt>Neighbourhood</dt><dd id="estimate-neighborhood">Halifax's West End</dd></div>
+                <div><dt>Rate</dt><dd id="estimate-rate">$0.30 / sq ft / month</dd></div>
+              </dl>
+              <button class="button estimate-button" id="confirm-selection" type="button">Continue with this package <span aria-hidden="true">→</span></button>
+              <p class="estimate-disclaimer">Your final care area will be confirmed with you before service begins.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="container">
+          <h2>More weekend. Less property to-do.</h2>
+          <p>Get to know the local team behind your year-round care.</p>
+          <a class="button" href="about.html">Meet SeasonalPass</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 SeasonalPass Property Services · Proudly serving Halifax's West End &amp; Northwest Arm</p>
+      </div>
+    </footer>
+
+    <dialog class="confirmation-modal" id="confirmation-modal" aria-labelledby="confirmation-heading">
+      <div class="modal-content">
+        <form method="dialog">
+          <button class="modal-close" type="submit" aria-label="Close confirmation dialog">×</button>
+        </form>
+        <p class="eyebrow">Your selection</p>
+        <h2 id="confirmation-heading">Your SeasonalPass estimate</h2>
+        <p class="modal-total" id="modal-total"></p>
+        <dl class="estimate-breakdown modal-breakdown">
+          <div><dt>Package</dt><dd id="modal-package"></dd></div>
+          <div><dt>Care area</dt><dd id="modal-area"></dd></div>
+          <div><dt>Neighbourhood</dt><dd id="modal-neighborhood"></dd></div>
+          <div><dt>Rate</dt><dd id="modal-rate"></dd></div>
+        </dl>
+        <p class="modal-note">This is an estimate based on your selections. Our local team will confirm the required care area with you.</p>
+        <a class="button modal-link" href="about.html">Learn about our local team</a>
+      </div>
+    </dialog>
+  </body>
+</html>
