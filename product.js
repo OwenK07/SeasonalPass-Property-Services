@@ -17,6 +17,7 @@
   const monthlyTotal = document.querySelector("#monthly-total");
   const confirmButton = document.querySelector("#confirm-selection");
   const modal = document.querySelector("#confirmation-modal");
+  const checkoutLink = document.querySelector("#checkout-link");
 
   const neighborhoodNames = {
     "west-end": "Halifax's West End",
@@ -35,6 +36,7 @@
     }
 
     return {
+      packageId: selected.value,
       name: selected.dataset.name,
       rate,
     };
@@ -109,6 +111,12 @@
     document.querySelector("#modal-area").textContent = `${selection.area.toLocaleString("en-CA")} sq ft`;
     document.querySelector("#modal-neighborhood").textContent = selection.neighborhood;
     document.querySelector("#modal-rate").textContent = `${currency.format(selection.rate)} / sq ft / month`;
+    const checkoutParams = new URLSearchParams({
+      package: selection.packageId,
+      area: String(selection.area),
+      neighborhood: neighborhoodInput.value,
+    });
+    checkoutLink.href = `checkout.html?${checkoutParams.toString()}`;
     modal.showModal();
   }
 
