@@ -16,8 +16,7 @@
   const areaError = document.querySelector("#area-error");
   const monthlyTotal = document.querySelector("#monthly-total");
   const confirmButton = document.querySelector("#confirm-selection");
-  const modal = document.querySelector("#confirmation-modal");
-  const checkoutLink = document.querySelector("#checkout-link");
+  const finalCheckoutButton = document.querySelector("#final-checkout");
 
   const neighborhoodNames = {
     "west-end": "Halifax's West End",
@@ -69,6 +68,7 @@
     }
 
     return {
+      packageId: packageChoice.packageId,
       packageName: packageChoice.name,
       rate: packageChoice.rate,
       area,
@@ -84,12 +84,14 @@
       areaError.textContent = "Enter a care area between 100 and 10,000 sq ft.";
       areaInput.setAttribute("aria-invalid", "true");
       confirmButton.disabled = true;
+      finalCheckoutButton.disabled = true;
       return;
     }
 
     areaError.textContent = "";
     areaInput.removeAttribute("aria-invalid");
     confirmButton.disabled = false;
+    finalCheckoutButton.disabled = false;
     areaInput.value = String(selection.area);
     areaSlider.value = String(selection.area);
     monthlyTotal.textContent = currency.format(selection.total);
@@ -99,25 +101,19 @@
     document.querySelector("#estimate-rate").textContent = `${currency.format(selection.rate)} / sq ft / month`;
   }
 
-  function openConfirmation() {
+  function goToCheckout() {
     const selection = currentSelection();
     if (!selection) {
       updateEstimate();
       return;
     }
 
-    document.querySelector("#modal-total").textContent = `${currency.format(selection.total)} per month`;
-    document.querySelector("#modal-package").textContent = selection.packageName;
-    document.querySelector("#modal-area").textContent = `${selection.area.toLocaleString("en-CA")} sq ft`;
-    document.querySelector("#modal-neighborhood").textContent = selection.neighborhood;
-    document.querySelector("#modal-rate").textContent = `${currency.format(selection.rate)} / sq ft / month`;
     const checkoutParams = new URLSearchParams({
       package: selection.packageId,
       area: String(selection.area),
       neighborhood: neighborhoodInput.value,
     });
-    checkoutLink.href = `checkout.html?${checkoutParams.toString()}`;
-    modal.showModal();
+    window.location.href = `checkout.html?${checkoutParams.toString()}`;
   }
 
   function applyPackageFromQuery() {
@@ -156,12 +152,8 @@
   });
 
   neighborhoodInput.addEventListener("change", updateEstimate);
-  confirmButton.addEventListener("click", openConfirmation);
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      modal.close();
-    }
-  });
+  confirmButton.addEventListener("click", goToCheckout);
+  finalCheckoutButton.addEventListener("click", goToCheckout);
 
   updateEstimate();
 })();

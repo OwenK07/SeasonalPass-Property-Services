@@ -56,6 +56,7 @@ select:focus-visible {
 
 .hero a:focus-visible,
 .final-cta a:focus-visible,
+.final-cta button:focus-visible,
 .estimate-panel button:focus-visible {
   outline-color: #fbbf24;
 }
@@ -1211,6 +1212,12 @@ h1 {
 }
 
 .estimate-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.final-cta .button:disabled {
   opacity: 0.55;
   cursor: not-allowed;
   transform: none;

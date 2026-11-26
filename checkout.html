@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b4332">
+    <meta name="description" content="Review your SeasonalPass estimate and continue through our demo checkout.">
+    <title>Checkout | SeasonalPass Property Services</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="checkout.js" defer></script>
+  </head>
+  <body>
+    <div class="scarcity-bar">
+      <strong>Limited annual subscriptions:</strong> spots are strictly capped for Halifax's West End &amp; Northwest Arm.
+    </div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="SeasonalPass Property Services home">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>SeasonalPass<small>Property Services</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="product.html">Packages &amp; Pricing</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="button button-small" href="product.html">EDIT YOUR ESTIMATE</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="product-intro checkout-intro">
+        <div class="container">
+          <p class="eyebrow">SeasonalPass checkout</p>
+          <h1>Review your quote. <span>Plan your next season.</span></h1>
+          <p>Check your package and estimated monthly total before continuing.</p>
+        </div>
+      </section>
+
+      <section class="section checkout-section" aria-labelledby="checkout-heading">
+        <div class="container">
+          <p class="checkout-error" id="checkout-error" role="alert" hidden>
+            We couldn't load a valid quote. Please choose a package and care area to continue.
+            <a href="product.html">Build your estimate</a>
+          </p>
+
+          <div class="checkout-layout" id="checkout-content" hidden>
+            <section class="checkout-panel" aria-labelledby="checkout-heading">
+              <p class="eyebrow">Your estimate</p>
+              <h2 id="checkout-heading">Quote summary</h2>
+              <dl class="estimate-breakdown checkout-breakdown">
+                <div><dt>Package</dt><dd id="checkout-package"></dd></div>
+                <div><dt>Care area</dt><dd id="checkout-area"></dd></div>
+                <div><dt>Neighbourhood</dt><dd id="checkout-neighborhood"></dd></div>
+                <div><dt>Rate</dt><dd id="checkout-rate"></dd></div>
+              </dl>
+              <p class="checkout-total" id="checkout-total"></p>
+              <p class="checkout-disclaimer">Estimated monthly total. We'll confirm your required care area and final price with you before service begins.</p>
+              <a class="checkout-back-link" id="edit-estimate" href="product.html">← Edit your estimate</a>
+            </section>
+
+            <section class="checkout-panel" aria-labelledby="details-heading">
+              <p class="eyebrow">Almost there</p>
+              <h2 id="details-heading">Your contact details</h2>
+              <p class="checkout-demo-notice">Demo checkout only: this page does not process payments or send or store your details. Do not enter sensitive information.</p>
+              <form id="checkout-form">
+                <div class="checkout-field">
+                  <label for="customer-name">Full name</label>
+                  <input id="customer-name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="checkout-field">
+                  <label for="customer-email">Email address</label>
+                  <input id="customer-email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="checkout-field">
+                  <label for="customer-phone">Phone number</label>
+                  <input id="customer-phone" name="phone" type="tel" autocomplete="tel" required>
+                </div>
+                <div class="checkout-field">
+                  <label for="service-address">Service address</label>
+                  <input id="service-address" name="address" type="text" autocomplete="street-address" required>
+                </div>
+                <p class="checkout-payment-note">No payment is collected on this demo page.</p>
+                <button class="button checkout-submit" type="submit">Complete demo checkout</button>
+              </form>
+              <p class="checkout-success" id="checkout-success" role="status" hidden></p>
+            </section>
+          </div>
+          <noscript><p class="checkout-noscript">Please enable JavaScript to load your quote and continue to checkout.</p></noscript>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 SeasonalPass Property Services · Proudly serving Halifax's West End &amp; Northwest Arm</p>
+      </div>
+    </footer>
+  </body>
+</html>

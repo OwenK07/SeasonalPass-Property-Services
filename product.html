@@ -111,7 +111,7 @@
                 <div><dt>Neighbourhood</dt><dd id="estimate-neighborhood">Halifax's West End</dd></div>
                 <div><dt>Rate</dt><dd id="estimate-rate">$0.30 / sq ft / month</dd></div>
               </dl>
-              <button class="button estimate-button" id="confirm-selection" type="button">Continue with this package <span aria-hidden="true">→</span></button>
+              <button class="button estimate-button" id="confirm-selection" type="button">Checkout <span aria-hidden="true">→</span></button>
               <p class="estimate-disclaimer">Your final care area will be confirmed with you before service begins.</p>
             </aside>
           </div>
@@ -120,9 +120,9 @@
 
       <section class="final-cta">
         <div class="container">
-          <h2>More weekend. Less property to-do.</h2>
-          <p>Get to know the local team behind your year-round care.</p>
-          <a class="button" href="about.html">Meet SeasonalPass</a>
+          <h2>Ready to get started?</h2>
+          <p>Your selected package and monthly estimate are ready for checkout.</p>
+          <button class="button" id="final-checkout" type="button">Checkout <span aria-hidden="true">→</span></button>
         </div>
       </section>
     </main>
@@ -133,23 +133,5 @@
       </div>
     </footer>
 
-    <dialog class="confirmation-modal" id="confirmation-modal" aria-labelledby="confirmation-heading">
-      <div class="modal-content">
-        <form method="dialog">
-          <button class="modal-close" type="submit" aria-label="Close confirmation dialog">×</button>
-        </form>
-        <p class="eyebrow">Your selection</p>
-        <h2 id="confirmation-heading">Your SeasonalPass estimate</h2>
-        <p class="modal-total" id="modal-total"></p>
-        <dl class="estimate-breakdown modal-breakdown">
-          <div><dt>Package</dt><dd id="modal-package"></dd></div>
-          <div><dt>Care area</dt><dd id="modal-area"></dd></div>
-          <div><dt>Neighbourhood</dt><dd id="modal-neighborhood"></dd></div>
-          <div><dt>Rate</dt><dd id="modal-rate"></dd></div>
-        </dl>
-        <p class="modal-note">This is an estimate based on your selections. Our local team will confirm the required care area with you.</p>
-        <a class="button modal-link" id="checkout-link" href="checkout.html">Continue to demo checkout</a>
-      </div>
-    </dialog>
   </body>
 </html>
